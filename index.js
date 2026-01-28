@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import fs from "fs";
-const browser = await puppeteer.launch({ headless: false, defaultViewport: null });
+const browser = await puppeteer.launch({ headless: true, defaultViewport: null, args: ["--no-sandbox", "--disable-setuid-sandbox"] });
 const page = await browser.newPage();
 await page.goto("https://www.naukri.com/it-jobs", {
     waitUntil: "networkidle2",
